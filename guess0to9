@@ -1,0 +1,17 @@
+//Guess a number!
+import random
+
+def checknum(inp)
+    inp = input("Enter a number from 0-9: ")
+    try:
+        number = int(inp)
+    except:
+        return "not valid!"
+    if number < 0:
+        return "too small!"
+    elif number > 9:
+        return "too big!"
+    else:
+        return number
+numb = checknum()
+print "Your entry is " + str(numb)
