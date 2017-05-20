@@ -1,17 +1,37 @@
 //Guess a number!
+//import random for number generation
 import random
 
-def checknum(inp)
+//Generate number first before all the drama happens
+b = random.randint(0,9)
+
+//Creates an infinite loop until the person quits
+while True:
+if input() == "quit"
+    break
+else:
+
+//For every entry, test if entry is genuine
     inp = input("Enter a number from 0-9: ")
     try:
         number = int(inp)
     except:
-        return "not valid!"
+        print "Invalid entry!"
+        continue
     if number < 0:
-        return "too small!"
+        print "The number is too small!"
+        continue
     elif number > 9:
-        return "too big!"
+        print "The number is too big!"
+        continue
     else:
-        return number
-numb = checknum()
-print "Your entry is " + str(numb)
+    
+//This part tests if the number is smaller or bigger than randomly generated number
+        if number > b:
+            print "The number is too big, try again."
+            continue
+        elif number < b:
+            print "The number is too small, try again."
+        else:
+            print "Congratulations!"
+            b = random.randint(0,9)
