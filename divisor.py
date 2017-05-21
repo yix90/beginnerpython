@@ -14,3 +14,5 @@ while a <= num:
         mul.append(a)
     a = a + 1
 print ("The multiples of", num, "is", mul)
+if len(mul) == 2:
+    print (num, "is a prime number.")
