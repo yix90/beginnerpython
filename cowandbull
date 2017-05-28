@@ -1,0 +1,15 @@
+#Cows and Bulls
+import random
+
+#Generate 4 random integers
+a = random.randint(0,9)
+b = random.randint(0,9)
+c = random.randint(0,9)
+d = random.randint(0,9)
+number = str(a)+str(b)+str(c)+str(d)
+
+#Get user input
+while num != number:
+  inp = ("Guess a 4 digit number:")
+  try:
+    
