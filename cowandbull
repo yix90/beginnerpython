@@ -7,9 +7,38 @@ b = random.randint(0,9)
 c = random.randint(0,9)
 d = random.randint(0,9)
 number = str(a)+str(b)+str(c)+str(d)
+count = 1
+numlist = [str(a), str(b), str(c), str(d)]
+userlist = []
+num = None
 
 #Get user input
 while num != number:
-  inp = ("Guess a 4 digit number:")
+  cow = 0
+  bull = 0
+  inp = input("Guess a 4 digit number:")
   try:
+    numy = int(inp)
+  except:
+    print("Invalid entry")
+    continue
+  if numy > 9999:
+    print("The number you entered is too large, try again")
+    continue
+  num = str(numy)
+  for piece in num:
+    userlist.append(piece)
+  if len(userlist) < 4:
+    print("Hey!")
+    continue
+  for usernum in userlist:
+    for numnum in numlist:
+      if (usernum == numnum and userlist.index(usernum) == numlist.index(numnum)):
+        bull = bull + 1
+      elif usernum == numnum:
+        cow = cow + 1
+        break
+  print ("Entry:"+num+", Cows = ",cow," Bulls = ", bull," Number of attempts:", count)
+  count = count + 1
+print ("You got it! The number is "+num)
     
